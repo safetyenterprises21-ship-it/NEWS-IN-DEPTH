@@ -13,81 +13,78 @@ class NewsInDepthApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'News In Depth',
       theme: ThemeData(useMaterial3: true),
-      home: const HomeScreen(),
+      home: const NewsFeedScreen(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class NewsFeedScreen extends StatelessWidget {
+  const NewsFeedScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final articles = [
+      {
+        "category": "Economy",
+        "title": "India Semiconductor Mission",
+        "content":
+            "The Government of India has expanded incentives for semiconductor manufacturing. This move aims to reduce import dependence, strengthen supply chains, and create a domestic chip ecosystem."
+      },
+      {
+        "category": "Environment",
+        "title": "Monsoon Outlook 2026",
+        "content":
+            "The India Meteorological Department predicts above-normal rainfall across most regions. This could support agricultural output but may also increase flood risks in vulnerable areas."
+      },
+      {
+        "category": "International Relations",
+        "title": "India–EU Trade Talks",
+        "content":
+            "India and the European Union continue negotiations on tariffs, market access, and investment rules. A successful agreement could significantly increase bilateral trade."
+      },
+    ];
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("News In Depth"),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(12),
-        children: const [
-          NewsCard(
-            category: "Economy",
-            title: "India Semiconductor Mission",
-            summary:
-                "Government expands incentives for semiconductor manufacturing.",
-          ),
-          NewsCard(
-            category: "Environment",
-            title: "Monsoon Outlook 2026",
-            summary:
-                "IMD predicts above-normal rainfall across most regions.",
-          ),
-          NewsCard(
-            category: "International Relations",
-            title: "India-EU Trade Talks",
-            summary:
-                "Negotiations continue on market access and tariffs.",
-          ),
-        ],
-      ),
-    );
-  }
-}
+      body: PageView.builder(
+        scrollDirection: Axis.vertical,
+        itemCount: articles.length,
+        itemBuilder: (context, index) {
+          final article = articles[index];
 
-class NewsCard extends StatelessWidget {
-  final String category;
-  final String title;
-  final String summary;
-
-  const NewsCard({
-    super.key,
-    required this.category,
-    required this.title,
-    required this.summary,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.only(bottom: 12),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Chip(label: Text(category)),
-            const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+          return SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Chip(
+                    label: Text(article["category"]!),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    article["title"]!,
+                    style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Text(
+                        article["content"]!,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          height: 1.6,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 8),
-            Text(summary),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
