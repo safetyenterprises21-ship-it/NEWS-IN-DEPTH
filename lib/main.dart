@@ -292,25 +292,67 @@ CircleAvatar(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 12,
-                              vertical: 6,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Text(
-                              article.category ?? "",
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                          Row(
+  children: [
+    Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12,
+        vertical: 6,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.orange,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        article.category ?? "",
+        style: const TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ),
 
-                          const SizedBox(height: 15),
+    const Spacer(),
+
+    IconButton(
+      onPressed: () async {
+        await BookmarkService.addBookmark(
+          article.title,
+        );
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              '${article.title} bookmarked',
+            ),
+          ),
+        );
+      },
+      icon: const Icon(
+        Icons.bookmark_border,
+        color: Colors.white70,
+        size: 18,
+      ),
+    ),
+
+    IconButton(
+      onPressed: () {
+        Share.share(
+          'Shared from UPSC Current Affairs App\n\n'
+          '${article.title}\n\n'
+          '${article.summary}',
+        );
+      },
+      icon: const Icon(
+        Icons.share,
+        color: Colors.white70,
+        size: 18,
+      ),
+    ),
+  ],
+),
+
+const SizedBox(height: 15),
 
                           Text(
                             article.title ?? "",
@@ -358,41 +400,7 @@ CircleAvatar(
 
                               const SizedBox(width: 10),
 
-                              IconButton(
-  onPressed: () async {
-    await BookmarkService.addBookmark(
-      article.title,
-    );
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          '${article.title} bookmarked',
-        ),
-      ),
-    );
-  },
-  icon: const Icon(
-    Icons.bookmark_border,
-    color: Colors.white,
-  ),
-),
-
-                              IconButton(
-  onPressed: () {
-    Share.share(
-  'Shared from UPSC Current Affairs App\n\n'
-  '${article.title}\n\n'
-  '${article.summary}',
-);
-  },
-  icon: const Icon(
-    Icons.share,
-    color: Colors.white,
-  ),
-),
-
-                              const SizedBox(width: 10),
+                        
                             ],
                           ),
 
