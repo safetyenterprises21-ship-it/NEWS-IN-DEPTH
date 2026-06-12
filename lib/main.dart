@@ -394,11 +394,31 @@ const SizedBox(height: 15),
                                   );
                                 },
                                 child: const Text(
-                                  "Read in Depth",
-                                ),
+  "📰 News in Depth"
+),
                               ),
 
                               const SizedBox(width: 10),
+
+if (article.basics.isNotEmpty)
+  ElevatedButton.icon(
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => DetailPage(
+            title: "${article.title} - UPSC basics",
+            detail: article.basics,
+          ),
+        ),
+      );
+    },
+    icon: const Icon(Icons.school, size: 18),
+    label: const Text("Basics"),
+  ),
+
+if (article.basics.isNotEmpty)
+  const SizedBox(width: 10),
 
                         
                             ],

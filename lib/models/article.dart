@@ -5,7 +5,7 @@ class Article {
   final String detail;
   final String image;
 
-  final String upscBasics;
+  final String basics;
   final String youtubeUrl;
 
   Article({
@@ -15,7 +15,7 @@ class Article {
   required this.detail,
   required this.image,
 
-  required this.upscBasics,
+  required this.basics,
   required this.youtubeUrl,
 });
 
@@ -27,7 +27,7 @@ class Article {
   detail: json['detail'] ?? '',
   image: json['image'] ?? '',
 
-  upscBasics: json['upscBasics'] ?? '',
+  basics: json['basics'] ?? '',
   youtubeUrl: json['youtubeUrl'] ?? '',
 );
   }

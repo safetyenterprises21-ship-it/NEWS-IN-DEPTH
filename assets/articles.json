@@ -1,10 +1,13 @@
 [
 {
   "category": "Environment",
-  "title": "El Niño to India",
-  "summary": "El Niño and a likely below-normal monsoon in 2026 could weaken agricultural output, increase food inflation, reduce rural incomes, and pose risks to India's economic growth and livelihood security.",
-  "detail": "What are the Economic Implications of El Niño for India?\n\nMonsoon Deficit:\nEl Niño typically weakens the easterly trade winds, which disrupt global atmospheric circulation and suppress India's Southwest Monsoon.\n\nBecause nearly 70% of India's annual rainfall occurs during this season, a deficit immediately threatens agriculture, reservoir replenishment, and groundwater recharge.\n\nAgricultural Shock:\n\nCrop Failures:\nAround half of India's net sown area is rain-fed. A delayed or deficient monsoon severely impacts the sowing and yield of crucial Kharif crops like rice, cotton, soybeans, and pulses.\n\nSurging Input Costs:\nTo compensate for the lack of rain, farmers are forced to extract groundwater. This leads to a sharp spike in input costs, primarily for diesel and electricity required to run irrigation pumps.\n\nIncome Erosion:\nThe combination of lower crop yields and higher input costs drastically squeezes the profit margins of small and marginal farmers, leading to acute rural distress.\n\nInflationary Spiral:\n\nFood Inflation:\nThe prices of essential dietary staples such as cereals, vegetables, and pulses spike rapidly.\n\nHousehold Squeeze:\nBecause food constitutes a massive portion of the Consumer Price Index (CPI) basket in India, high food inflation aggressively erodes the purchasing power of households.\n\nHeat Economy:\n\nProductivity Tax:\nA vast majority of India's workforce operates in the informal sector, often outdoors. Severe heat stress forces a reduction in physical efficiency and shortens workable hours.\n\nUrban Heat Island Effect:\nUnplanned concretization and the loss of green cover trap heat, making urban centres significantly hotter than surrounding rural areas.\n\nAsymmetrical Adaptive Capacity:\nWealthier demographics can adapt through air conditioning and assured water delivery, while poorer communities face severe heat exposure and water scarcity.\n\nRBI's Macroeconomic Dilemma:\n\nStagflation Threat:\nThe economy faces the dual threat of slowing growth and rising inflation.\n\nPolicy Trap:\nTo control high inflation, the RBI may tighten monetary policy through higher interest rates. However, this can reduce investment and further slow economic growth.",
-  "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200"
+  "title": "El Niño",
+  "summary": "El Niño is a climate phenomenon caused by warming of the Pacific Ocean. It affects rainfall patterns across the world including India. UPSC frequently asks about its impact on monsoon, agriculture and economy.",
+  "detail": "Detailed UPSC analysis of El Niño's impact on monsoon, agriculture and economy goes here.",
+  "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200",
+
+  "basics": "El Niño is a climate phenomenon caused by warming of the Pacific Ocean. It affects rainfall patterns across the world including India. UPSC frequently asks about its impact on monsoon, agriculture and economy."
+
 },
 {
     "category": "Polity",
